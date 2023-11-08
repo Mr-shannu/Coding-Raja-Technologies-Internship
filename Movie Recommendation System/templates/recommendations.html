@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <style>
+        body {
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20191113/pngtree-blue-movie-film-texture-background-image_321897.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            padding: 10px;
+        }
+       
+
+        h2 {
+            font-size: 150%;
+            color: rgb(0, 50, 150);
+            margin-top: 10px;
+            padding: 10px;
+            text-align:center;
+            text-decoration-line: unset;
+            text-shadow: 0px 0px 20px rgb(255, 0, 0);
+            
+        }
+
+        ul {
+
+            color: rgb(0, 50, 100);
+            text-align:justify;
+            text-decoration-line: unset;
+            padding-bottom: 30px;
+        }
+
+        div{
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            margin: 20px 10px 10px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            padding-left: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+            align-items:self-start
+            
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <h2>Movie Recommendations for User {{ user_id }}</h2>
+    </div>
+    <div>
+        <h2>Top 10 Recommended Movies for User {{ user_id }}</h2>
+        <ul>
+            {% for movie in movies %}
+                <li>{{ movie['movie_name'] }} - Rating: {{ movie['rating'] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+</body>
+</html>
